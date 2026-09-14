@@ -1,0 +1,23 @@
+{
+	"$schema": "../node_modules/@companion-module/base/assets/manifest.schema.json",
+	"id": "generic-mpris",
+	"type": "connection",
+	"name": "generic-mpris",
+	"shortname": "mpris",
+	"description": "Control MPRIS-compatible media players (Spotify, VLC, Firefox, Chrome, rhythmbox, etc.) on Linux via D-Bus",
+	"version": "1.0.0",
+	"license": "MIT",
+	"repository": "",
+	"bugs": "",
+	"maintainers": [],
+	"legacyIds": [],
+	"runtime": {
+		"type": "node22",
+		"api": "nodejs-ipc",
+		"apiVersion": "2.1.3",
+		"entrypoint": "../main.js"
+	},
+	"manufacturer": "Custom",
+	"products": ["MPRIS"],
+	"keywords": ["linux", "mpris", "media", "dbus", "spotify", "vlc"]
+}
