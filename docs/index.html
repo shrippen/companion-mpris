@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Companion MPRIS — Media player control for Bitfocus Companion</title>
+<meta name="description" content="A Bitfocus Companion module that controls MPRIS-capable media players on Linux over D-Bus. Play, pause, skip, feedback and variables.">
+<meta property="og:title" content="Companion MPRIS — Media player control for Bitfocus Companion">
+<meta property="og:description" content="A Bitfocus Companion module that controls MPRIS-capable media players on Linux over D-Bus. Play, pause, skip, feedback and variables.">
+<meta property="og:image" content="https://shrippen.github.io/companion-mpris/social-preview.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="https://shrippen.github.io/companion-mpris/">
+<link rel="icon" href="icon.svg">
+<script defer src="https://um.arianw.de/script.js" data-website-id="056d39ee-6a9d-4b14-9902-5a1ac399df08"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://shrippen.github.io/DesignDefault/v1/shrippen.css">
+<script src="https://shrippen.github.io/DesignDefault/v1/shrippen.js"></script>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <a class="nav-brand" href="#"><img src="icon.svg" alt="">Companion MPRIS</a>
+  <div class="nav-links">
+    <a href="#features"><span lang="en">Features</span><span lang="de">Funktionen</span></a><a href="#install"><span lang="en">Install</span><span lang="de">Installation</span></a><a class="nav-hl" href="https://github.com/shrippen/companion-mpris">GitHub</a>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="de" aria-pressed="false">DE</button>
+    </div>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <img class="hero-wm" src="icon-mono.svg" alt="" aria-hidden="true">
+  <div class="hero-main">
+    <h1 style="--title-size:clamp(2.8rem,10vw,8rem);--title-size-narrow:clamp(2.5rem,17.1vw,13.1rem)">Companion <br class="split">MPRIS</h1>
+    <p class="tagline" lang="en">Control MPRIS-capable media players on Linux from Bitfocus Companion over D-Bus. Spotify, VLC, Firefox, Chrome, Rhythmbox, Feishin — no <code>playerctl</code> needed.</p><p class="tagline" lang="de">Steuere MPRIS-fähige Mediaplayer unter Linux aus Bitfocus Companion über D-Bus. Spotify, VLC, Firefox, Chrome, Rhythmbox, Feishin – ohne <code>playerctl</code>.</p>
+  </div>
+  <div class="hero-side">
+    <div class="install-card">
+      <label><span lang="en">Run from source</span><span lang="de">Aus dem Quellcode starten</span></label><div class="cmd-row"><div class="cmd-box">git clone https://github.com/shrippen/companion-mpris.git mpris &amp;&amp; cd mpris &amp;&amp; npm install</div><button class="copy-btn" type="button" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+      <p class="install-note" lang="en">Or download the <code>.tgz</code> from Releases and import it in Companion under <strong>Settings → Modules → Import module package</strong>.</p><p class="install-note" lang="de">Oder lade das <code>.tgz</code> aus den Releases herunter und importiere es in Companion unter <strong>Settings → Modules → Import module package</strong>.</p>
+      <div class="install-links"><a class="btn btn-primary" href="https://github.com/shrippen/companion-mpris/releases">Download</a><a class="btn btn-ghost" href="https://github.com/shrippen/companion-mpris">GitHub</a></div>
+    </div>
+    
+  </div>
+</header>
+
+<main>
+
+
+<section class="features" id="features">
+  <div class="feat" data-tier="red">
+    <span class="feat-tag">Actions</span>
+    <h3 lang="en">Transport actions</h3><h3 lang="de">Transport-Aktionen</h3>
+    <p lang="en">Play/Pause, Play, Pause, Stop, Next track and Previous track.</p><p lang="de">Play/Pause, Play, Pause, Stop, nächster Titel und vorheriger Titel.</p>
+  </div>
+  <div class="feat" data-tier="yellow">
+    <span class="feat-tag">Auto</span>
+    <h3 lang="en">Auto player selection</h3><h3 lang="de">Automatische Playerwahl</h3>
+    <p lang="en">Every action has a Player dropdown. <strong>Auto</strong> picks the playing player, or the first one found. Target a specific player when several run at once.</p><p lang="de">Jede Aktion hat ein Player-Dropdown. <strong>Auto</strong> wählt den laufenden Player oder den ersten gefundenen. Bei mehreren Playern lässt sich ein bestimmter gezielt ansteuern.</p>
+  </div>
+  <div class="feat" data-tier="blue">
+    <span class="feat-tag">Feedback</span>
+    <h3 lang="en">Playback feedback</h3><h3 lang="de">Wiedergabe-Feedback</h3>
+    <p lang="en">Colors a button depending on whether the selected player is Playing, Paused or Stopped.</p><p lang="de">Färbt eine Taste je nachdem, ob der gewählte Player spielt, pausiert oder gestoppt ist.</p>
+  </div>
+  <div class="feat" data-tier="red">
+    <span class="feat-tag"><span lang="en">Variables</span><span lang="de">Variablen</span></span>
+    <h3 lang="en">Live variables</h3><h3 lang="de">Live-Variablen</h3>
+    <p lang="en"><code>player_name</code>, <code>playback_status</code>, <code>track_title</code>, <code>track_artist</code> and <code>track_album</code>.</p><p lang="de"><code>player_name</code>, <code>playback_status</code>, <code>track_title</code>, <code>track_artist</code> und <code>track_album</code>.</p>
+  </div>
+  <div class="feat" data-tier="yellow">
+    <span class="feat-tag">Presets</span>
+    <h3 lang="en">Ready-made presets</h3><h3 lang="de">Fertige Presets</h3>
+    <p lang="en">Category <strong>MPRIS Transport Controls</strong>: Play/Pause with live feedback, Previous, Next, Stop, Play, Pause. Drag them onto a button.</p><p lang="de">Kategorie <strong>MPRIS Transport Controls</strong>: Play/Pause mit Live-Feedback, Previous, Next, Stop, Play, Pause. Per Drag-and-drop auf eine Taste ziehen.</p>
+  </div>
+  <div class="feat" data-tier="blue">
+    <span class="feat-tag">D-Bus</span>
+    <h3 lang="en">Pure JS, no playerctl</h3><h3 lang="de">Reines JS, kein playerctl</h3>
+    <p lang="en">Talks to MPRIS directly via <code>dbus-next</code>. Falls back to <code>$XDG_RUNTIME_DIR/bus</code> when Companion starts the module without a session bus address.</p><p lang="de">Spricht MPRIS direkt über <code>dbus-next</code>. Fällt auf <code>$XDG_RUNTIME_DIR/bus</code> zurück, wenn Companion das Modul ohne Session-Bus-Adresse startet.</p>
+  </div>
+</section>
+<section class="section" id="install">
+  <h2 lang="en">Installation</h2><h2 lang="de">Installation</h2>
+  <ol class="steps" lang="en"><li>Download the <code>.tgz</code> from the <a href="https://github.com/shrippen/companion-mpris/releases">Releases</a> page.</li><li>In Companion open <strong>Settings → Modules → Import module package</strong> and select the file.</li><li>Under <strong>Connections → Add connection</strong> search for “MPRIS” and add it. No configuration required.</li></ol><ol class="steps" lang="de"><li>Lade das <code>.tgz</code> von der <a href="https://github.com/shrippen/companion-mpris/releases">Releases</a>-Seite herunter.</li><li>Öffne in Companion <strong>Settings → Modules → Import module package</strong> und wähle die Datei.</li><li>Suche unter <strong>Connections → Add connection</strong> nach „MPRIS“ und füge es hinzu. Keine Konfiguration nötig.</li></ol>
+</section>
+<section class="section">
+  <h2 lang="en">Run from source</h2><h2 lang="de">Aus dem Quellcode</h2>
+  <ol class="steps" lang="en"><li>Clone the repo into a subfolder of a development folder, e.g. <code>~/companion-dev/mpris</code>.</li><li>Run <code>npm install</code> inside the module folder.</li><li>In the Companion launcher set <strong>Developer modules path</strong> to the parent folder, not the module folder.</li><li>Restart Companion and add the “MPRIS” connection.</li></ol><ol class="steps" lang="de"><li>Klone das Repo in einen Unterordner eines Entwicklungsordners, z. B. <code>~/companion-dev/mpris</code>.</li><li>Führe <code>npm install</code> im Modulordner aus.</li><li>Setze im Companion-Launcher den <strong>Developer modules path</strong> auf den übergeordneten Ordner, nicht auf den Modulordner.</li><li>Starte Companion neu und füge die Verbindung „MPRIS“ hinzu.</li></ol>
+</section>
+<section class="section">
+  <h2 lang="en">Requirements</h2><h2 lang="de">Voraussetzungen</h2>
+  <ul lang="en"><li>Linux with a running D-Bus session bus (standard on any desktop session)</li><li>One or more MPRIS-capable players, e.g. Spotify or VLC</li><li>Node.js 22+ (bundled with Companion; install separately for local testing)</li></ul><ul lang="de"><li>Linux mit laufendem D-Bus-Session-Bus (Standard in jeder Desktop-Sitzung)</li><li>Ein oder mehrere MPRIS-fähige Player, z. B. Spotify oder VLC</li><li>Node.js 22+ (in Companion enthalten; für lokale Tests separat installieren)</li></ul>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <img src="icon.svg" alt="">
+      <div><span class="foot-name">Companion MPRIS</span><span class="foot-tag"><span lang="en">Media player control for Bitfocus Companion</span><span lang="de">Mediaplayer-Steuerung für Bitfocus Companion</span></span></div>
+    </div>
+    <nav class="foot-cols" aria-label="Footer">
+      <div><h4><span lang="en">Project</span><span lang="de">Projekt</span></h4><a href="#features"><span lang="en">Features</span><span lang="de">Funktionen</span></a><a href="#install"><span lang="en">Install</span><span lang="de">Installation</span></a></div>
+      <div><h4><span lang="en">Source</span><span lang="de">Quelltext</span></h4><a href="https://github.com/shrippen/companion-mpris">GitHub</a><a href="https://github.com/shrippen/companion-mpris/issues">Issues</a><a href="https://github.com/shrippen/companion-mpris/releases">Releases</a></div>
+    </nav>
+  </div>
+  <div class="foot-meta"><p>MIT · shrippen · v1.0.0</p></div>
+</footer>
+
+</body>
+</html>
