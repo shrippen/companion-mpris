@@ -17,8 +17,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://shrippen.github.io/DesignDefault/v1/shrippen.css">
-<script src="https://shrippen.github.io/DesignDefault/v1/shrippen.js"></script>
+<link rel="stylesheet" href="https://shrippen.github.io/v1/shrippen.css">
+<script src="https://shrippen.github.io/v1/shrippen.js"></script>
 </head>
 <body>
 
@@ -41,11 +41,11 @@
   </div>
   <div class="hero-side">
     <div class="install-card">
-      <label><span lang="en">Run from source</span><span lang="de">Aus dem Quellcode starten</span></label><div class="cmd-row"><div class="cmd-box">git clone https://github.com/shrippen/companion-mpris.git mpris &amp;&amp; cd mpris &amp;&amp; npm install</div><button class="copy-btn" type="button" title="Copy" aria-label="Copy"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-      <p class="install-note" lang="en">Or download the <code>.tgz</code> from Releases and import it in Companion under <strong>Settings → Modules → Import module package</strong>.</p><p class="install-note" lang="de">Oder lade das <code>.tgz</code> aus den Releases herunter und importiere es in Companion unter <strong>Settings → Modules → Import module package</strong>.</p>
-      <div class="install-links"><a class="btn btn-primary" href="https://github.com/shrippen/companion-mpris/releases">Download</a><a class="btn btn-ghost" href="https://github.com/shrippen/companion-mpris">GitHub</a></div>
+      <label><span lang="en">Install the module</span><span lang="de">Modul installieren</span></label>
+      <p class="install-note" lang="en"><strong>1.</strong> Download the <code>.tgz</code> from the latest release.<br><strong>2.</strong> In Companion open <strong>Settings → Modules → Import module package</strong>.<br><strong>3.</strong> Under <strong>Connections → Add connection</strong> search for “MPRIS”.</p><p class="install-note" lang="de"><strong>1.</strong> Lade das <code>.tgz</code> aus dem neuesten Release herunter.<br><strong>2.</strong> Öffne in Companion <strong>Settings → Modules → Import module package</strong>.<br><strong>3.</strong> Suche unter <strong>Connections → Add connection</strong> nach „MPRIS“.</p>
+      <div class="install-links"><a class="btn btn-primary" href="https://github.com/shrippen/companion-mpris/releases/latest"><span lang="en">Download .tgz</span><span lang="de">.tgz herunterladen</span></a><a class="btn btn-ghost" href="https://github.com/shrippen/companion-mpris">GitHub</a></div>
     </div>
-    
+    <div class="hero-shot"><img src="screenshot.jpg" alt="A Companion button page with Previous, Play/Pause and Next buttons and buttons showing track variables"></div>
   </div>
 </header>
 
@@ -84,12 +84,16 @@
     <p lang="en">Talks to MPRIS directly via <code>dbus-next</code>. Falls back to <code>$XDG_RUNTIME_DIR/bus</code> when Companion starts the module without a session bus address.</p><p lang="de">Spricht MPRIS direkt über <code>dbus-next</code>. Fällt auf <code>$XDG_RUNTIME_DIR/bus</code> zurück, wenn Companion das Modul ohne Session-Bus-Adresse startet.</p>
   </div>
 </section>
+<section class="section" id="buttons"><h2 lang="en">On your buttons</h2><h2 lang="de">Auf deinen Tasten</h2><p lang="en">Drag the presets onto a Companion page and you get transport keys that react to the player. Play/Pause changes its color with the playback status, and the variables put the current title, artist or album on any button.</p><p lang="de">Ziehe die Presets auf eine Companion-Seite, und du bekommst Transporttasten, die auf den Player reagieren. Play/Pause ändert seine Farbe mit dem Wiedergabestatus, und die Variablen zeigen aktuellen Titel, Künstler oder Album auf jeder Taste.</p><ul lang="en"><li>Use variable references like <code>$(LABEL:track_title)</code> in a button text, where <code>LABEL</code> is the name of your MPRIS connection</li><li>Pick <strong>Auto</strong> in the Player dropdown so the keys follow whichever player is playing</li><li>Pin a key to one player when several run at once</li></ul><ul lang="de"><li>Nutze Variablenverweise wie <code>$(LABEL:track_title)</code> im Tastentext, wobei <code>LABEL</code> der Name deiner MPRIS-Verbindung ist</li><li>Wähle <strong>Auto</strong> im Player-Dropdown, damit die Tasten dem gerade spielenden Player folgen</li><li>Lege eine Taste auf einen Player fest, wenn mehrere gleichzeitig laufen</li></ul></section>
 <section class="section" id="install">
   <h2 lang="en">Installation</h2><h2 lang="de">Installation</h2>
   <ol class="steps" lang="en"><li>Download the <code>.tgz</code> from the <a href="https://github.com/shrippen/companion-mpris/releases">Releases</a> page.</li><li>In Companion open <strong>Settings → Modules → Import module package</strong> and select the file.</li><li>Under <strong>Connections → Add connection</strong> search for “MPRIS” and add it. No configuration required.</li></ol><ol class="steps" lang="de"><li>Lade das <code>.tgz</code> von der <a href="https://github.com/shrippen/companion-mpris/releases">Releases</a>-Seite herunter.</li><li>Öffne in Companion <strong>Settings → Modules → Import module package</strong> und wähle die Datei.</li><li>Suche unter <strong>Connections → Add connection</strong> nach „MPRIS“ und füge es hinzu. Keine Konfiguration nötig.</li></ol>
 </section>
 <section class="section">
   <h2 lang="en">Run from source</h2><h2 lang="de">Aus dem Quellcode</h2>
+  <p lang="en">For development. The packaged release above is the easy way.</p><p lang="de">Für die Entwicklung. Das fertige Release oben ist der einfache Weg.</p>
+  <div class="codeblock">git clone https://github.com/shrippen/companion-mpris.git ~/companion-dev/mpris
+cd ~/companion-dev/mpris &amp;&amp; npm install</div>
   <ol class="steps" lang="en"><li>Clone the repo into a subfolder of a development folder, e.g. <code>~/companion-dev/mpris</code>.</li><li>Run <code>npm install</code> inside the module folder.</li><li>In the Companion launcher set <strong>Developer modules path</strong> to the parent folder, not the module folder.</li><li>Restart Companion and add the “MPRIS” connection.</li></ol><ol class="steps" lang="de"><li>Klone das Repo in einen Unterordner eines Entwicklungsordners, z. B. <code>~/companion-dev/mpris</code>.</li><li>Führe <code>npm install</code> im Modulordner aus.</li><li>Setze im Companion-Launcher den <strong>Developer modules path</strong> auf den übergeordneten Ordner, nicht auf den Modulordner.</li><li>Starte Companion neu und füge die Verbindung „MPRIS“ hinzu.</li></ol>
 </section>
 <section class="section">
