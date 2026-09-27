@@ -1,0 +1,6 @@
+{
+  "kind": "command",
+  "start": "true",
+  "note": "Needs a running Companion with the module on a button page. Companion 5.0.6 in Docker restarts the dev module before init ('Restart forced'), so this shot is still taken by hand: enable 'Demo mode' in the connection settings, place the presets, screenshot the button page.",
+  "shots": [{"name": "buttons", "manual": true}]
+}

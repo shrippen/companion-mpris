@@ -77,6 +77,14 @@ Companion starts the module process with a heavily restricted environment (no
 `unix:path=$XDG_RUNTIME_DIR/bus` in that case (the standard session bus path
 under systemd/logind), which should work on most Linux desktops.
 
+## Demo mode
+
+Tick **Demo mode** in the connection settings (or set `MPRIS_DEMO=1` when running the module
+outside Companion) to get two made-up players instead of D-Bus: Elisa plays and VLC is paused, both
+with the score of Studio Weber, the demo world shared by all shrippen projects
+(`src/demo/world.cjs`, generated from `shrippen.github.io/demo`; do not edit it here). Play, pause,
+next and previous work, so buttons, feedbacks and variables can be tried without a media player.
+
 ## Debugging outside of Companion
 
 ```bash
