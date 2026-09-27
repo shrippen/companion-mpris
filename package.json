@@ -7,7 +7,8 @@
 	"private": true,
 	"scripts": {
 		"test": "echo \"no tests\"",
-		"package": "companion-module-build --ignore-license-rules"
+		"package": "companion-module-build --ignore-license-rules",
+		"postpackage": "scripts/check-package.sh"
 	},
 	"dependencies": {
 		"@companion-module/base": "^2.1.3",

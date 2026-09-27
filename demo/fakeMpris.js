@@ -1,10 +1,10 @@
-import { MprisManager, MPRIS_PREFIX } from './mpris.js'
-import world from './demo/world.cjs'
+import { MprisManager, MPRIS_PREFIX } from '../src/mpris.js'
+import world from './world.cjs'
 
 /**
- * Demo players for the "Demo mode" option: no D-Bus, made-up players that play the score of
- * Studio Weber, the demo world shared by all shrippen projects (src/demo/world.cjs, generated
- * from shrippen.github.io/demo; do not edit it here). Play, pause, next and previous work on
+ * Internal demo (screenshots only, never in the packaged module): no D-Bus, made-up players
+ * that play the score of Studio Weber, the demo world shared by all shrippen projects
+ * (demo/world.cjs, generated from shrippen.github.io/demo; do not edit it here). Play, pause, next and previous work on
  * this in-memory state, so buttons, feedbacks and variables behave like with real players.
  */
 class FakeMprisManager extends MprisManager {
