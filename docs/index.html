@@ -25,7 +25,7 @@
 <nav class="nav"><div class="nav-inner">
   <a class="nav-brand" href="#"><img src="icon.svg" alt="">Companion MPRIS</a>
   <div class="nav-links">
-    <a href="#features"><span lang="en">Features</span><span lang="de">Funktionen</span></a><a href="#install"><span lang="en">Install</span><span lang="de">Installation</span></a><a class="nav-hl" href="https://github.com/shrippen/companion-mpris">GitHub</a>
+    <a href="#features"><span lang="en">Features</span><span lang="de">Funktionen</span></a><a href="#install"><span lang="en">Install</span><span lang="de">Installation</span></a><a href="#changes"><span lang="en">Changes</span><span lang="de">Änderungen</span></a><a class="nav-hl" href="https://github.com/shrippen/companion-mpris">GitHub</a>
     <div class="lang" role="group" aria-label="Language">
       <button type="button" data-lang="en" aria-pressed="true">EN</button>
       <button type="button" data-lang="de" aria-pressed="false">DE</button>
@@ -100,6 +100,26 @@ cd ~/companion-dev/mpris &amp;&amp; npm install</div>
   <h2 lang="en">Requirements</h2><h2 lang="de">Voraussetzungen</h2>
   <ul lang="en"><li>Linux with a running D-Bus session bus (standard on any desktop session)</li><li>One or more MPRIS-capable players, e.g. Spotify or VLC</li><li>Node.js 22+ (bundled with Companion; install separately for local testing)</li></ul><ul lang="de"><li>Linux mit laufendem D-Bus-Session-Bus (Standard in jeder Desktop-Sitzung)</li><li>Ein oder mehrere MPRIS-fähige Player, z. B. Spotify oder VLC</li><li>Node.js 22+ (in Companion enthalten; für lokale Tests separat installieren)</li></ul>
 </section>
+
+<section class="section" id="changes">
+  <h2 lang="en">Changes</h2><h2 lang="de">Änderungen</h2>
+  <ol class="changelog">
+    <li class="release" id="v1.0.0">
+      <div class="release-head"><b class="release-version">1.0.0</b><time datetime="2026-09-14"><span lang="en">14 Sep 2026</span><span lang="de">14. Sep. 2026</span></time></div>
+      <div class="release-body">
+        <p class="release-lead"><span lang="en">The first release: control MPRIS media players on Linux (Spotify, VLC, Firefox, Feishin, …) from Bitfocus Companion.</span><span lang="de">Die erste Version: MPRIS-Mediaplayer unter Linux (Spotify, VLC, Firefox, Feishin, …) aus Bitfocus Companion steuern.</span></p>
+        <div class="release-group" data-kind="new"><h3><span lang="en">New</span><span lang="de">Neu</span></h3><ul>
+          <li><span lang="en">Actions Play/Pause, Play, Pause, Stop, Next and Previous, each with a choice of player.</span><span lang="de">Aktionen Play/Pause, Play, Pause, Stop, Weiter und Zurück, jede mit Wahl des Players.</span></li>
+          <li><span lang="en">A feedback that colours a button by playback status (playing, paused, stopped), and variables with the current track.</span><span lang="de">Ein Feedback, das eine Taste nach Wiedergabestatus färbt (spielt, pausiert, gestoppt), und Variablen mit dem aktuellen Titel.</span></li>
+          <li><span lang="en">Ready-made presets: drag them onto a Companion page and get transport keys that react to the player.</span><span lang="de">Fertige Presets: auf eine Companion-Seite ziehen und Transporttasten bekommen, die auf den Player reagieren.</span></li>
+        </ul></div>
+        <div class="release-group" data-kind="note"><h3><span lang="en">Note</span><span lang="de">Hinweis</span></h3><ul>
+          <li><span lang="en">Install: download <code>generic-mpris-1.0.0.tgz</code> from the release, then in Companion go to Settings → Modules → Import module package and select the file.</span><span lang="de">Installation: <code>generic-mpris-1.0.0.tgz</code> vom Release laden, dann in Companion unter Settings → Modules → Import module package die Datei wählen.</span></li>
+        </ul></div>
+      </div>
+    </li>
+  </ol>
+</section>
 </main>
 
 <footer class="foot">
@@ -109,7 +129,7 @@ cd ~/companion-dev/mpris &amp;&amp; npm install</div>
       <div><span class="foot-name">Companion MPRIS</span><span class="foot-tag"><span lang="en">Media player control for Bitfocus Companion</span><span lang="de">Mediaplayer-Steuerung für Bitfocus Companion</span></span></div>
     </div>
     <nav class="foot-cols" aria-label="Footer">
-      <div><h4><span lang="en">Project</span><span lang="de">Projekt</span></h4><a href="#features"><span lang="en">Features</span><span lang="de">Funktionen</span></a><a href="#install"><span lang="en">Install</span><span lang="de">Installation</span></a></div>
+      <div><h4><span lang="en">Project</span><span lang="de">Projekt</span></h4><a href="#features"><span lang="en">Features</span><span lang="de">Funktionen</span></a><a href="#install"><span lang="en">Install</span><span lang="de">Installation</span></a><a href="#changes"><span lang="en">Changes</span><span lang="de">Änderungen</span></a></div>
       <div><h4><span lang="en">Source</span><span lang="de">Quelltext</span></h4><a href="https://github.com/shrippen/companion-mpris">GitHub</a><a href="https://github.com/shrippen/companion-mpris/issues">Issues</a><a href="https://github.com/shrippen/companion-mpris/releases">Releases</a></div>
     </nav>
   </div>

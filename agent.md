@@ -57,6 +57,11 @@ Rule 7: Use the body to explain what and why vs. how. Assume the code explains t
 - A project without a GUI (library, CLI, scripts) has nothing to do here.
 - Rule text: https://github.com/shrippen/Kante/blob/main/AGENT-RULE.md
 
+## Release rule
+
+- Every release gets a release log, written before the tag, in `CHANGELOG.md` (the single source): a section `## [X.Y.Z] — YYYY-MM-DD` at the top with `### English` and `### Deutsch`, each with a lead (what the release is about), the changes grouped as New, Improved, Fixed and Note (`####`; breaking changes, steps the user must take) and the compare link to the previous tag. Each point says what changed for the user and why, not which code moved.
+- The same text goes into the release notes on Gitea and as a new entry at the top of `#changes` on the landing page (`docs/index.html`, Kante `.changelog`); from the fourth entry on, the oldest move into `details.changelog-more`. Bump the version in the footer. A release is done when the landing page shows it.
+
 ## Repository rule
 
 - This repository lives on Gitea (`git.arianw.de`). GitHub is only a push mirror of it.
