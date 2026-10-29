@@ -1,0 +1,63 @@
+# Release on tag v*: build the module package and attach it to the GitHub release.
+#   tag = package.json version ──► npm ci, npm run package (postpackage: no demo inside)
+#   ──► notes from CHANGELOG.md (scripts/release-notes.sh) ──► GitHub release + generic-mpris-X.Y.Z.tgz
+# GitHub only ("Gitea prüft, GitHub veröffentlicht"): Gitea releases get tag and notes, never files.
+# The if keeps the job off Gitea, which runs .github/workflows/ while .gitea/workflows/ does not exist.
+name: Release
+on:
+  push:
+    tags: ["v*"]
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    if: github.server_url == 'https://github.com'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # v1.2.0 needs "version": "1.2.0" in package.json; no section in CHANGELOG.md, no release.
+      - name: Version and notes
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          set -eu
+          version="${TAG#v}"
+          pkg=$(node -p 'require("./package.json").version')
+          if [ "$pkg" != "$version" ]; then
+            echo "Tag $TAG does not match package.json version $pkg" >&2
+            exit 1
+          fi
+          scripts/release-notes.sh "$version" > "$RUNNER_TEMP/notes.md"
+          echo "VERSION=$version" >> "$GITHUB_ENV"
+
+      - name: Package
+        # companion-module-build calls yarn: take it from corepack, not from whatever the image has
+        run: |
+          corepack enable
+          npm ci
+          npm run package
+
+      - name: GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          set -eu
+          file="generic-mpris-$VERSION.tgz"
+          test -f "$file"
+          if ! gh release view "$TAG" --repo "$GITHUB_REPOSITORY" > /dev/null 2>&1; then
+            gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --verify-tag \
+              --title "Companion MPRIS $VERSION" --notes-file "$RUNNER_TEMP/notes.md"
+          fi
+          gh release upload "$TAG" "$file" --repo "$GITHUB_REPOSITORY" --clobber
