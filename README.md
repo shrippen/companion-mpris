@@ -107,12 +107,7 @@ src/choices.js            Shared player dropdown choices
 ## Releasing a new version
 
 This project uses [`@companion-module/tools`](https://github.com/bitfocus/companion-module-base/wiki/Module-packaging)
-to build a distributable package:
-
-1. Bump the `version` field in `package.json` (semver: `major.minor.patch`).
-2. Run `npm run package`. This produces `pkg/` and a
-   `companion-module-generic-mpris-<version>.tgz` archive in the project root -
-   this file is what gets attached to a GitHub release and is what users import
-   via **Import module package** in Companion.
-3. Tag the commit: `git tag v<version>` and `git push --tags`.
-4. Create a GitHub release for the tag and attach the `.tgz` file.
+to build a distributable package: `npm run package` produces `pkg/` and
+`generic-mpris-<version>.tgz` in the project root, the file users import via
+**Import module package** in Companion. The whole release, from the version bump
+to the GitHub release, is the list "Release steps" in `agent.md`.
