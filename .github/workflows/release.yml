@@ -42,7 +42,9 @@ jobs:
           echo "VERSION=$version" >> "$GITHUB_ENV"
 
       - name: Package
+        # companion-module-build calls yarn: take it from corepack, not from whatever the image has
         run: |
+          corepack enable
           npm ci
           npm run package
 
