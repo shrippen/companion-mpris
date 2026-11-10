@@ -110,4 +110,4 @@ This project uses [`@companion-module/tools`](https://github.com/bitfocus/compan
 to build a distributable package: `npm run package` produces `pkg/` and
 `generic-mpris-<version>.tgz` in the project root, the file users import via
 **Import module package** in Companion. The whole release, from the version bump
-to the GitHub release, is the list "Release steps" in `agent.md`.
+to the GitHub release, is the list "Release steps" in `RELEASE.md`.
