@@ -4,3 +4,4 @@
 # Rule tooling, not part of the module.
 /tools export-ignore
 /structure.baseline export-ignore
+/AUDIT.md export-ignore
