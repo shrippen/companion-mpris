@@ -13,5 +13,5 @@ is published, so the owner confirms it in words.
 
 ## Repository (this project)
 
-- The merge waits for: the review only. This repository has no CI check (`.github/workflows/release.yml` runs on `v*` tags only) and no PR-Agent.
+- The merge waits for: the review and a clean `pipx run tools/structure-check.py` (limits in `structure.baseline`), run by hand. This repository has no CI check (`.github/workflows/release.yml` runs on `v*` tags only) and no PR-Agent.
 - Everything else: `RULES.md` (Repository) and the skill `pr-review`.

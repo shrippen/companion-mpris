@@ -1,3 +1,6 @@
 # Not part of release archives (git archive): demo start and screenshot scripts.
 # The demo data the app itself needs lives elsewhere and stays in.
 /demo export-ignore
+# Rule tooling, not part of the module.
+/tools export-ignore
+/structure.baseline export-ignore
