@@ -79,7 +79,9 @@ over MPRIS, the D-Bus interface desktop media players share.
 - `src/variables.js` reads the MPRIS metadata keys itself; the player block passes the
   metadata on unread (not in `AUDIT.md`).
 - Every command has its own forwarding function in the player block, and the actions
-  call it by its name as text (`AUDIT.md`, finding 3).
+  call it by its name as text (`AUDIT.md`, finding 3). To be solved through the player
+  block's list of commands, not by naming MPRIS commands in the actions as the finding
+  proposes.
 - The demo depends on the inner function names of the player block and does not check that
   they still exist (`AUDIT.md`, finding 6).
 - There are no tests (`AUDIT.md`, finding 7).
