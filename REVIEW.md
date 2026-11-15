@@ -10,8 +10,8 @@ Companion MPRIS lets Stream Deck buttons control the media players on this Linux
 D-Bus. A bug that matters is one the user notices on stage or at the desk:
 
 - **Wrong player:** "Auto" picks a paused or stopped player while another one plays, a button
-  sets to a specific player but the command goes to another, a player that closed stays
-  addressed, a player with an odd bus name is missing from the dropdown.
+  set to a specific player that is running sends its command to another, a player that
+  closed stays addressed, a player with an odd bus name is missing from the dropdown.
 - **Wrong state:** a button lit as playing while the player is paused, a variable that keeps
   the last title after the player closed, an artist list (array) shown as `[object]` or not
   at all, a missing metadata key throwing instead of showing an empty text.
@@ -20,8 +20,8 @@ D-Bus. A bug that matters is one the user notices on stage or at the desk:
 - **Dead module:** a D-Bus error, a player that vanishes mid-call or a missing session bus
   address that rejects, crashes the module or leaves it "OK" while nothing works. Poll or
   timer left running after `destroy()`.
-- **Broken package:** the demo or the D-Bus library bundled into the `.tgz`, a manifest that
-  does not match `package.json`.
+- **Broken package:** the demo in the `.tgz`, the D-Bus library bundled into `main.js`, a
+  manifest that does not match `package.json`.
 - **Lies:** `README.md`, `CHANGELOG.md`, `docs/index.html` or comments the code contradicts.
 
 ## What to check in particular
@@ -41,7 +41,6 @@ D-Bus. A bug that matters is one the user notices on stage or at the desk:
 ## What the owner confirms here
 
 - A release (`RELEASE.md`) or a change to `.github/workflows/release.yml`.
-- Changes to what the landing page publishes (`docs/`).
 
 ## Skip
 
@@ -54,6 +53,12 @@ D-Bus. A bug that matters is one the user notices on stage or at the desk:
 - Every finding names file and line and the concrete input or state that goes wrong.
   No guess without evidence; if unsure, say so.
 - Each finding gets one label: **Wichtig** (must be fixed or answered before the merge),
-  **Kleinigkeit** (optional, at most five) or **Bestand** (was there before this PR).
-- The report starts with the count, e.g. "2 Wichtig, 1 Kleinigkeit".
+  **Kleinigkeit** (optional, at most five) or **Bestand** (was there before this PR; not
+  blocking).
+- The report starts with the count, e.g. "2 Wichtig, 1 Kleinigkeit, 0 Bestand" (the session
+  puts the heading above it). The count of **Wichtig** holds every one still open, also from
+  an earlier round, e.g. "1 Wichtig (offen aus Runde 1)". Only when none is open it says
+  plainly: "Nichts zu beheben."
+- In a later round: say for each open **Wichtig** of the last round whether it is fixed, or
+  whether its answer is accepted, with the reason (skill `pr-review`).
 - Findings in German, code names as they are.
